@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 export default function Home() {
     const [products, setProducts] = useState([]);
     const [cartItems, setCartItems] = useState([]);  // Define cartItems state here
-    const [searchParams, setSearchParams] = useSearchParams();  // Use searchParams to fetch products
+    const [searchParams] = useSearchParams();  // Use searchParams to fetch products
 
     // Load cart from localStorage on initial load (if available)
     useEffect(() => {
