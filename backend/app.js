@@ -20,12 +20,12 @@ app.use('/api/v1/',orders);
 // Route for searching products by keyword
 app.get('/api/v1/products/search', searchProducts);  // Handle product search
 
-if (process.env.NODE_ENV == 'production') {
-    app.use(express.static(path.join(__dirname, '..', 'frontend',  'build')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'))
-    });
-}
+// if (process.env.NODE_ENV == 'production') {
+//     app.use(express.static(path.join(__dirname, '..', 'frontend',  'build')));
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, '..', 'frontend', 'build', 'index.html'))
+//     });
+// }
 
 app.listen(process.env.PORT, () => {
     console.log(`Server listening to Port ${process.env.PORT} in ${process.env.NODE_ENV}`)
